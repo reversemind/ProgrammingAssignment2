@@ -4,15 +4,17 @@
 source("cachematrix.R")
 
 
-cachedM<-makeCacheMatrix(rbind(c(1, 2), c(3, 4)))
-cs<-cacheSolve(cachedM)
+originMatrix <- matrix(1:4,2,2)
+
+matrixWithCaching <- makeCacheMatrix(originMatrix)
+inverseMatrix <- cacheSolve(matrixWithCaching)
 
 # this function call should use a cache
-cs<-cacheSolve(cachedM)
+inverseMatrix2 <- cacheSolve(matrixWithCaching)
 
 
 
-# What about time measurement
+# What about time measurement?
 
 
 
