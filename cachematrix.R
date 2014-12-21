@@ -1,17 +1,17 @@
 ## Coursera / R Programming / Programming Assignment 2
 ##
-## These two functions are extends a usage of matrix calculations
+## These two functions extends a usage of matrix calculations.
 ##
-## The first one 'makeCacheMatrix()' - creates a list of functions for caching of matrix
-## The second one 'cacheSolve()' using to speed up a computation of inverse matrix.
-## Function 'cacheSolve()' using a solve() function to compute an inverse matrix 
+## The first function 'makeCacheMatrix()' - creates a list of functions for caching of matrix.
+## The second one 'cacheSolve()' used to speed up a computation of inverse matrix.
+## Function 'cacheSolve()' used a 'solve()' function to compute a inverse matrix. 
 
 
 ##
-# Make a cache for matrix
+# Makes a cache for matrix
 # 
-# Creates a list of extra sub-functions,
-# just to save origin matrix and save in cache a previously computed matrix
+# Creates a list of extra sub-functions, 
+# to save origin matrix and save in cache a previously computed matrix
 #
 # parameters:
 #   x - is a square invertible matrix
