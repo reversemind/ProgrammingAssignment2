@@ -4,7 +4,7 @@
 ##
 ## The first function 'makeCacheMatrix()' - creates a list of functions for caching of matrix.
 ## The second one 'cacheSolve()' used to speed up a computation of inverse matrix.
-## Function 'cacheSolve()' used a 'solve()' function to compute a inverse matrix. 
+## Function 'cacheSolve()' used a 'solve()' function to compute an inverse matrix. 
 
 
 ##
@@ -30,7 +30,7 @@
 #   matrixWithCaching <- makeCacheMatrix(originMatrix)
 #
 makeCacheMatrix <- function(x = matrix()) {
-  # initialize cache variable
+  # initializes a cache variable
   cacheMatrix <- NULL
   
   # 
@@ -44,7 +44,7 @@ makeCacheMatrix <- function(x = matrix()) {
   setMatrixToCache <- function(value) cacheMatrix <<- value
   getMatrixFromCache <- function() cacheMatrix
   
-  # return an extra functions for matrix as a list
+  # return extra functions for matrix as a list
   list(setMatrix = setMatrix, 
        getMatrix = getMatrix,
        setMatrixToCache = setMatrixToCache,
@@ -53,7 +53,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ##
-# Get an inverse matrix
+# Returns an inverse matrix
 # 
 # The first function call will cache an inverse matrix.
 # Further calls of function will pull the inverse matrix from cache.
@@ -77,17 +77,17 @@ cacheSolve <- function(m, ...) {
   # trying to get a previously caclulated and cached matrix
   cachedMatrix <- m$getMatrixFromCache()
   
-  # if cachedMatrix is exist - just return it
+  # if cachedMatrix exists - just returns it
   if(!is.null(cachedMatrix)) {
     message("getting cached data")
     return(cachedMatrix)
   }
   
-  # cachedMatrix is empty - calculate an inverse matrix via solve()
+  # cachedMatrix is empty - so calculate an inverse matrix via solve()
   data <- m$getMatrix()
   inverseMatrix <- solve(data, ...)
   
-  # put in cache - an inverseMatrix for further using
+  # put to cache - an inverseMatrix for further using
   m$setMatrixToCache(inverseMatrix)
   
   inverseMatrix
